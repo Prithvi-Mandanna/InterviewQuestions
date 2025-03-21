@@ -240,4 +240,14 @@ public class MasterClassWithMethods {
 
         }
     }
+
+    public void searchForElementInArray(int i, int[] arr) {
+        for(int j:arr){
+            if (j==i){
+                System.out.println("Element "+i+" found in array");
+                return;
+            }
+        }
+        System.out.println("Element "+i+" NOT found in array");
+    }
 };

@@ -27,7 +27,10 @@ public class Main {
 //        //masterClass.findMaxAndMinNumbersInArray(arr);
 //        //masterClass.findSecondLargestNumberInArray(arr);
 
+//        int[] arr = {5, 5, 4, 3,5};
+//        masterClass.findDuplicateElementsInArray(arr);
+
         int[] arr = {5, 5, 4, 3,5};
-        masterClass.findDuplicateElementsInArray(arr);
+        masterClass.searchForElementInArray(6,arr);
     }
 }
