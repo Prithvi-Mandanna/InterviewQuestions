@@ -2,6 +2,9 @@ package org.mandu;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import static java.lang.Boolean.*;
 
 public class MasterClassWithMethods {
 
@@ -249,5 +252,81 @@ public class MasterClassWithMethods {
             }
         }
         System.out.println("Element "+i+" NOT found in array");
+    }
+
+    public void searchForElementInArrayBinarySearch(int i, int[] arr) {
+        int[] sortedArray = this.bubbleSortArray(arr);
+        int arrLength = arr.length;
+        int lowerIndex = 0;
+        int upperIndex = arrLength-1;
+
+        //boolean found = FALSE;
+        if (i<sortedArray[0] || i>sortedArray[arrLength-1]){
+            System.out.println(i+" is NOT found in the array");
+            return;
+        }
+        while (lowerIndex<=upperIndex){
+            int midIndex = (lowerIndex+upperIndex)/2;
+            if (i==sortedArray[midIndex]){
+                System.out.println(i+" is found in array");
+                return;
+            } else if (i<sortedArray[midIndex]) {
+                upperIndex = midIndex-1;
+            } else {
+                lowerIndex = midIndex+1;
+            }
+        }
+        System.out.println(i+" is NOT found in the array");
+    }
+
+    public int[] bubbleSortArray(int[] arr) {
+        for (int j=0;j<arr.length-1;j++){
+            Boolean swapped = FALSE;
+            for (int i=0;i<arr.length-1-j;i++){
+                if (arr[i]>arr[i+1]){
+                    int temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                    swapped = TRUE;
+                    //System.out.println("Pass "+i);
+//                    for (int value:arr){
+//                        System.out.print(" "+value);
+//                    }
+//                    System.out.println();
+                }
+            }
+            if (swapped == FALSE){
+                System.out.println("The array is already sorted");
+                return arr;
+            }
+        }
+        return arr;
+    }
+
+    public void checkForSpecialChar(String s) {
+      int nonSpecialCharCount = 0;
+        for(int i=0;i<s.length();i++){
+          if (Character.isWhitespace(s.charAt(i)) || Character.isDigit(s.charAt(i)) || Character.isLetter(s.charAt(i))){
+              nonSpecialCharCount++;
+          }
+      }
+        int specialCharCount = s.length() - nonSpecialCharCount;
+        System.out.println("Number of special characters is "+ specialCharCount);
+
+    }
+
+    public void reverseEachWordInSentence(String sentence) {
+        String reverseSentence = "";
+        String[] wordsInSenence = sentence.split(" ");
+        for (String word:wordsInSenence){
+            int wordLength = word.length();
+            //char[] wordArray = word.toCharArray();
+            String reverseWord = "";
+            for (int i=wordLength-1;i>=0;i--){
+                reverseWord = reverseWord + word.charAt(i);
+            }
+            reverseSentence = reverseSentence + reverseWord + " ";
+        }
+        System.out.println(reverseSentence);
     }
 };

@@ -30,7 +30,19 @@ public class Main {
 //        int[] arr = {5, 5, 4, 3,5};
 //        masterClass.findDuplicateElementsInArray(arr);
 
-        int[] arr = {5, 5, 4, 3,5};
-        masterClass.searchForElementInArray(6,arr);
+//        int[] arr = {8, 6, 4, 2,1};
+//        masterClass.searchForElementInArray(6,arr);
+//        masterClass.searchForElementInArrayBinarySearch(-1,arr);
+
+//        //Bubble Sort
+//        int[] arr = {8, 6, 4, 2,1};
+//        //int[] arr = {1,2,3,4,6};
+//        int[] sortedArray = masterClass.bubbleSortArray(arr);
+//        for (int val:sortedArray){
+//            System.out.print(" "+val);
+//        }
+        //masterClass.checkForSpecialChar("kjl*6kj** &&**)");
+        masterClass.reverseEachWordInSentence("its a beautiful day");
+
     }
 }
